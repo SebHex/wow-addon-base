@@ -96,7 +96,9 @@ function Utils:SetMinimapIconShown(shown)
   end
 end
 
--- Open the config dialog.
+--[[
+  Open the config dialog.
+]]
 function Utils:OpenConfigDialog()
   AceConfigDialog:Open(addonName)
 end
