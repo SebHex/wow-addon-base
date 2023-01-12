@@ -33,8 +33,8 @@ local configDialogOptions = {
       type = "description",
       fontSize = "large",
       image = "Interface\\Icons\\Ability_Monk_CounteractMagic",
-			imageWidth = 24,
-			imageHeight = 24,
+      imageWidth = 24,
+      imageHeight = 24,
       name = Metadata.Title .. " " .. Metadata.Version
     },
     description = {
@@ -44,10 +44,10 @@ local configDialogOptions = {
       name = "This is an example description."
     },
     divider = {
-			order = 3,
-			type = "header",
-			name = ""
-		},
+      order = 3,
+      type = "header",
+      name = ""
+    },
     generalOptions = {
       order = 4,
       type = "group",
@@ -86,5 +86,5 @@ function Addon:RefreshConfig(event)
 end
 
 function Addon:SlashCommand(input)
-	Utils:ToggleConfigDialog()
+  Utils:ToggleConfigDialog()
 end

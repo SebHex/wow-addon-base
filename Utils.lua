@@ -56,9 +56,9 @@ end
 ]]
 function Utils:CreateDB(addon, name, defaultOptions)
   local db = AceDB:New(name, defaultOptions, true)
-	db.RegisterCallback(addon, "OnProfileChanged", "RefreshConfig")
-	db.RegisterCallback(addon, "OnProfileCopied", "RefreshConfig")
-	db.RegisterCallback(addon, "OnProfileReset", "RefreshConfig")
+  db.RegisterCallback(addon, "OnProfileChanged", "RefreshConfig")
+  db.RegisterCallback(addon, "OnProfileCopied", "RefreshConfig")
+  db.RegisterCallback(addon, "OnProfileReset", "RefreshConfig")
 
   return db
 end
