@@ -97,11 +97,15 @@ function Utils:SetMinimapIconShown(shown)
   end
 end
 
+local Metadata = addonTable.Metadata
+local configDialogStatusText = format("|cff808080Version: %s • Author: %s|r", Metadata.Version, Metadata.Author)
+
 --[[
   Open the config dialog.
 ]]
 function Utils:OpenConfigDialog()
   AceConfigDialog:Open(addonName)
+  AceConfigDialog.OpenFrames[addonName]:SetStatusText(configDialogStatusText)
 end
 
 --[[

@@ -35,7 +35,7 @@ local configDialogOptions = {
       image = "Interface\\Icons\\Ability_Monk_CounteractMagic",
       imageWidth = 24,
       imageHeight = 24,
-      name = Metadata.Title .. " " .. Metadata.Version
+      name = Metadata.Title
     },
     description = {
       order = 2,
