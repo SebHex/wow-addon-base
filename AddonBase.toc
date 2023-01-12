@@ -1,7 +1,7 @@
 ## Interface: 100002
 ## Version: 1.0.0
 ## Title: Addon Base
-## Notes: A starting point for your addon.
+## Notes: A starting point for your next WoW addon.
 ## Author: SebHex
 ## SavedVariables: AddonBaseDB
 
