@@ -1,6 +1,6 @@
 # WoW Addon Base
 
-A base for your next WoW addon.
+A starting point for your next WoW addon.
 
 ## Features
 
