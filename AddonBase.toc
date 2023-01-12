@@ -1,0 +1,13 @@
+## Interface: 100002
+## Version: 1.0.0
+## Title: Addon Base
+## Notes: A starting point for your addon.
+## Author: SebHex
+## SavedVariables: AddonBaseDB
+
+Embeds.xml
+
+Metadata.lua
+Libs.lua
+Utils.lua
+Init.lua
