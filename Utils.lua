@@ -1,11 +1,12 @@
 local addonName, addonTable = ...
-local AceAddon = addonTable.Libs.AceAddon
-local AceDB = addonTable.Libs.AceDB
-local LibDataBroker = addonTable.Libs.LibDataBroker
-local LibDBIcon = addonTable.Libs.LibDBIcon
-local AceDBOptions = addonTable.Libs.AceDBOptions
-local AceConfig = addonTable.Libs.AceConfig
-local AceConfigDialog = addonTable.Libs.AceConfigDialog
+local Libs = addonTable.Libs
+local AceAddon = Libs.AceAddon
+local AceDB = Libs.AceDB
+local LibDataBroker = Libs.LibDataBroker
+local LibDBIcon = Libs.LibDBIcon
+local AceDBOptions = Libs.AceDBOptions
+local AceConfig = Libs.AceConfig
+local AceConfigDialog = Libs.AceConfigDialog
 local viragAddonName = "ViragDevTool"
 local viragFailedToLoad = false
 
