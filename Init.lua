@@ -41,7 +41,7 @@ local configDialogOptions = {
       order = 2,
       type = "description",
       fontSize = "medium",
-      name = "This is an example description."
+      name = "A starting point for your next WoW addon."
     },
     divider = {
       order = 3,
