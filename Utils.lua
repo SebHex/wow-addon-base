@@ -1,4 +1,5 @@
 local addonName, addonTable = ...
+local Metadata = addonTable.Metadata
 local Libs = addonTable.Libs
 local AceAddon = Libs.AceAddon
 local AceDB = Libs.AceDB
@@ -80,7 +81,7 @@ end
 function Utils:CreateConfigDialog(options, width, height)
   options.args.profile = AceDBOptions:GetOptionsTable(addonTable.db)
   AceConfig:RegisterOptionsTable(addonName, options)
-  AceConfigDialog:AddToBlizOptions(addonName, addonTable.title)
+  AceConfigDialog:AddToBlizOptions(addonName, Metadata.Title)
   AceConfigDialog:SetDefaultSize(addonName, width, height)
 
   return AceConfigDialog
@@ -97,7 +98,6 @@ function Utils:SetMinimapIconShown(shown)
   end
 end
 
-local Metadata = addonTable.Metadata
 local configDialogStatusText = format("|cff808080Version: %s • Author: %s|r", Metadata.Version, Metadata.Author)
 
 --[[
