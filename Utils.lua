@@ -13,6 +13,14 @@ local Utils = {}
 addonTable.Utils = Utils
 
 --[[
+  Print a message to the chat frame. The message is formatted as a warning.
+]]
+function Utils:PrintWarning(message)
+  local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
+  print(warningIcon, "|cfff8e928" .. message .. "|r")
+end
+
+--[[
   Attempt to load an addon. If it fails, a warning is printed to the chat frame.
   Returns true if the addon was loaded, false otherwise.
 ]]
@@ -21,9 +29,7 @@ function Utils:LoadAddon(name)
     local loaded, reason = LoadAddOn(name)
 
     if (not loaded) then
-      local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
-      local couldntLoadText = format(ADDON_LOAD_FAILED, name, _G["ADDON_" .. reason])
-      print(warningIcon, "|cfff8e928" .. couldntLoadText .. "|r")
+      Utils:PrintWarning(format(ADDON_LOAD_FAILED, name, _G["ADDON_" .. reason]))
       return false
     else
       return true
