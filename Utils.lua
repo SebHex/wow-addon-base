@@ -54,6 +54,17 @@ function Utils:Log(data, name)
 end
 
 --[[
+  Toggle the ViragDevTool dialog to see logs.
+
+  See https://github.com/brittyazel/ViragDevTool
+]]
+function Utils:ToggleLogsDialog()
+  if (Utils:LoadAddon("ViragDevTool")) then
+    ViragDevTool:ToggleUI()
+  end
+end
+
+--[[
   Create an addon using Ace3.
 
   See https://www.wowace.com/projects/ace3/pages/api/ace-addon-3-0
