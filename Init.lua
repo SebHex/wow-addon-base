@@ -86,5 +86,9 @@ function Addon:RefreshConfig(event)
 end
 
 function Addon:SlashCommand(input)
-  Utils:ToggleConfigDialog()
+  if (input == "") then
+    Utils:ToggleConfigDialog()
+  elseif (input == "logs") then
+    Utils:ToggleLogsDialog()
+  end
 end
