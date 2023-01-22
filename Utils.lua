@@ -8,11 +8,30 @@ local LibDBIcon = Libs.LibDBIcon
 local AceDBOptions = Libs.AceDBOptions
 local AceConfig = Libs.AceConfig
 local AceConfigDialog = Libs.AceConfigDialog
-local viragAddonName = "ViragDevTool"
-local viragFailedToLoad = false
 
 local Utils = {}
 addonTable.Utils = Utils
+
+--[[
+  Attempt to load an addon. If it fails, a warning is printed to the chat frame.
+  Returns true if the addon was loaded, false otherwise.
+]]
+function Utils:LoadAddon(name)
+  if (not IsAddOnLoaded(name)) then
+    local loaded, reason = LoadAddOn(name)
+
+    if (not loaded) then
+      local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
+      local couldntLoadText = format(ADDON_LOAD_FAILED, name, _G["ADDON_" .. reason])
+      print(warningIcon, "|cfff8e928" .. couldntLoadText .. "|r")
+      return false
+    else
+      return true
+    end
+  end
+
+  return true
+end
 
 --[[
   Log data to the ViragDevTool addon.
@@ -21,16 +40,8 @@ addonTable.Utils = Utils
   See https://github.com/brittyazel/ViragDevTool
 ]]
 function Utils:Log(data, name)
-  if (not IsAddOnLoaded(viragAddonName)) then
-    local loaded, reason = LoadAddOn(viragAddonName)
-
-    if (not loaded and not viragFailedToLoad) then
-      local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
-      local message = format(ADDON_LOAD_FAILED, viragAddonName, _G["ADDON_" .. reason])
-      print(warningIcon .. "|cfff8e928", message, "|r")
-      viragFailedToLoad = true
-      return
-    end
+  if (not Utils:LoadAddon("ViragDevTool")) then
+    return
   end
 
   name = name or tostring(data)
