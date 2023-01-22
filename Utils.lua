@@ -15,8 +15,9 @@ addonTable.Utils = Utils
 --[[
   Print a message to the chat frame. The message is formatted as a warning.
 ]]
-function Utils:PrintWarning(message)
+function Utils:PrintWarning(...)
   local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
+  local message = table.concat({...}, " ")
   print(warningIcon, "|cfff8e928" .. message .. "|r")
 end
 
