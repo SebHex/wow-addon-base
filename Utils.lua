@@ -8,6 +8,7 @@ local LibDBIcon = Libs.LibDBIcon
 local AceDBOptions = Libs.AceDBOptions
 local AceConfig = Libs.AceConfig
 local AceConfigDialog = Libs.AceConfigDialog
+local AceConfigRegistry = Libs.AceConfigRegistry
 
 local Utils = {}
 addonTable.Utils = Utils
@@ -125,6 +126,13 @@ function Utils:SetMinimapIconShown(shown)
   else
     LibDBIcon:Hide(addonName)
   end
+end
+
+--[[
+  Get the config dialog options.
+]]
+function Utils:GetConfigDialogOptions()
+  return AceConfigRegistry:GetOptionsTable(addonName, "dialog", "AceConfigDialog-3.0")
 end
 
 local configDialogStatusText = format("|cff808080Version: %s • Author: %s|r", Metadata.Version, Metadata.Author)
