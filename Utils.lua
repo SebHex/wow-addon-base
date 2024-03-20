@@ -14,7 +14,7 @@ local Utils = {}
 addonTable.Utils = Utils
 
 --[[
-  Print a message to the chat frame. The message is formatted as a warning.
+  Print a warning message to chat frame
 ]]
 function Utils:PrintWarning(...)
   local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
@@ -24,11 +24,11 @@ end
 
 --[[
   Attempt to load an addon. If it fails, a warning is printed to the chat frame.
-  Returns true if the addon was loaded, false otherwise.
+  Returns true if the addon was loaded, false otherwise
 ]]
 function Utils:LoadAddon(name)
-  if (not IsAddOnLoaded(name)) then
-    local loaded, reason = LoadAddOn(name)
+  if (not C_AddOns.IsAddOnLoaded(name)) then
+    local loaded, reason = C_AddOns.LoadAddOn(name)
 
     if (not loaded) then
       Utils:PrintWarning(format(ADDON_LOAD_FAILED, name, _G["ADDON_" .. reason]))
@@ -42,47 +42,46 @@ function Utils:LoadAddon(name)
 end
 
 --[[
-  Log data to the ViragDevTool addon.
-  Recommended for debugging and addon development.
+  Log data to DevTool addon. Recommended for debugging and addon development
 
-  See https://github.com/brittyazel/ViragDevTool
+  See https://github.com/brittyazel/DevTool
 ]]
 function Utils:Log(data, name)
-  if (not Utils:LoadAddon("ViragDevTool")) then
+  if (not Utils:LoadAddon("DevTool")) then
     return
   end
 
   name = name or tostring(data)
 
-  if (ViragDevToolFrame) then
-    ViragDevTool:AddData(data, name)
+  if (DevToolFrame) then
+    DevTool:AddData(data, name)
   else
-    ViragDevTool.list:AddNode(data, name)
+    DevTool.list:AddNode(data, name)
   end
 end
 
 --[[
-  Toggle the ViragDevTool dialog to see logs.
+  Toggle DevTool dialog to see logs
 
-  See https://github.com/brittyazel/ViragDevTool
+  See https://github.com/brittyazel/DevTool
 ]]
 function Utils:ToggleLogsDialog()
-  if (Utils:LoadAddon("ViragDevTool")) then
-    ViragDevTool:ToggleUI()
+  if (Utils:LoadAddon("DevTool")) then
+    DevTool:ToggleUI()
   end
 end
 
 --[[
-  Create an addon using Ace3.
+  Create an addon using Ace3
 
   See https://www.wowace.com/projects/ace3/pages/api/ace-addon-3-0
 ]]
 function Utils:CreateAddon(name)
-  return AceAddon:NewAddon(name, "AceConsole-3.0")
+  return AceAddon:NewAddon(name, "AceConsole-3.0", "AceEvent-3.0")
 end
 
 --[[
-  Create a db using Ace3.
+  Create a db using Ace3
 
   See https://www.wowace.com/projects/ace3/pages/api/ace-db-3-0
 ]]
@@ -96,7 +95,7 @@ function Utils:CreateDB(addon, name, defaultOptions)
 end
 
 --[[
-  Create a minimap icon using LibDataBroker and LibDBIcon.
+  Create a minimap icon using LibDataBroker and LibDBIcon
 ]]
 function Utils:CreateMinimapIcon(options)
   local minimapIconData = LibDataBroker:NewDataObject(addonName, options)
@@ -106,7 +105,7 @@ function Utils:CreateMinimapIcon(options)
 end
 
 --[[
-  Create a config dialog using Ace3.
+  Create a config dialog using Ace3
 ]]
 function Utils:CreateConfigDialog(options, width, height)
   options.args.profile = AceDBOptions:GetOptionsTable(addonTable.db)
@@ -118,7 +117,7 @@ function Utils:CreateConfigDialog(options, width, height)
 end
 
 --[[
-  Set the minimap icon to shown or hidden.
+  Show or hide minimap icon
 ]]
 function Utils:SetMinimapIconShown(shown)
   if (shown) then
@@ -129,7 +128,7 @@ function Utils:SetMinimapIconShown(shown)
 end
 
 --[[
-  Get the config dialog options.
+  Get config dialog options
 ]]
 function Utils:GetConfigDialogOptions()
   return AceConfigRegistry:GetOptionsTable(addonName, "dialog", "AceConfigDialog-3.0")
@@ -138,7 +137,7 @@ end
 local configDialogStatusText = format("|cff808080Version: %s • Author: %s|r", Metadata.Version, Metadata.Author)
 
 --[[
-  Open the config dialog.
+  Open config dialog
 ]]
 function Utils:OpenConfigDialog()
   if (AceConfigDialog.OpenFrames[addonName]) then
@@ -150,14 +149,14 @@ function Utils:OpenConfigDialog()
 end
 
 --[[
-  Close the config dialog.
+  Close config dialog
 ]]
 function Utils:CloseConfigDialog()
   AceConfigDialog:Close(addonName)
 end
 
 --[[
-  Toggle the config dialog.
+  Toggle config dialog
 ]]
 function Utils:ToggleConfigDialog()
   local isOpen = AceConfigDialog.OpenFrames[addonName]
