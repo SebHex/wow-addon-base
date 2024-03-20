@@ -11,7 +11,7 @@ A starting point for your next WoW addon.
 ## Recommended dev addons
 
 - [BugGrabber](https://www.curseforge.com/wow/addons/bug-grabber) with [BugSack](https://www.curseforge.com/wow/addons/bugsack)
-- [ViragDevTool](https://github.com/brittyazel/ViragDevTool)
+- [DevTool](https://github.com/brittyazel/DevTool)
 
 ## Useful links
 
