@@ -1,4 +1,4 @@
-## Interface: 100002
+## Interface: 100205
 ## Version: 1.0.0
 ## Title: Addon Base
 ## Notes: A starting point for your next WoW addon.
