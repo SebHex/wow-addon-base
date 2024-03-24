@@ -13,7 +13,7 @@ local defaultDBOptions = {
 
 -- See https://www.wowace.com/projects/libdbicon-1-0
 local minimapIconOptions = {
-  icon = "Interface\\Icons\\Ability_Monk_CounteractMagic",
+  icon = Metadata.IconTexture,
   OnTooltipShow = function(tooltip)
     tooltip:AddLine(Metadata.Title)
     tooltip:AddLine("Click to toggle the options menu")
@@ -32,7 +32,7 @@ local configDialogOptions = {
       order = 1,
       type = "description",
       fontSize = "large",
-      image = "Interface\\Icons\\Ability_Monk_CounteractMagic",
+      image = Metadata.IconTexture,
       imageWidth = 24,
       imageHeight = 24,
       name = Metadata.Title

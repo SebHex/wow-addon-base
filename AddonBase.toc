@@ -2,6 +2,7 @@
 ## Version: 1.0.0
 ## Title: Addon Base
 ## Notes: A starting point for your next WoW addon.
+## IconTexture: Interface\Icons\Ability_Monk_CounteractMagic
 ## Author: SebHex
 ## SavedVariables: AddonBaseDB
 
