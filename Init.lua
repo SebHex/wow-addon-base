@@ -71,6 +71,10 @@ local configDialogOptions = {
   }
 }
 
+function AddonBase_AddonCompartmentFunc()
+  Utils:ToggleConfigDialog()
+end
+
 addonTable.Addon = Utils:CreateAddon(addonName, defaultDBOptions)
 local Addon = addonTable.Addon
 

@@ -5,6 +5,7 @@
 ## IconTexture: Interface\Icons\Ability_Monk_CounteractMagic
 ## Author: SebHex
 ## SavedVariables: AddonBaseDB
+## AddonCompartmentFunc: AddonBase_AddonCompartmentFunc
 
 Embeds.xml
 
