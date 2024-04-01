@@ -71,7 +71,7 @@ local configDialogOptions = {
   }
 }
 
-function AddonBase_AddonCompartmentFunc()
+_G[Metadata.Title .. "_AddonCompartmentFunc"] = function()
   Utils:ToggleConfigDialog()
 end
 
