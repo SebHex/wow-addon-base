@@ -1,15 +1,13 @@
-## Interface: 100205
+## Interface: 110200
 ## Version: 1.0.0
 ## Title: Addon Base
-## Notes: A starting point for your next WoW addon.
+## Notes: A clean starting point for your next WoW addon.
 ## IconTexture: Interface\Icons\Ability_Monk_CounteractMagic
 ## Author: SebHex
 ## SavedVariables: AddonBaseDB
 ## AddonCompartmentFunc: AddonBase_AddonCompartmentFunc
 
-Embeds.xml
-
 Metadata.lua
-Libs.lua
+Dialog.lua
 Utils.lua
 Init.lua

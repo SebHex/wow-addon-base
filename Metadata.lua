@@ -9,4 +9,4 @@ Metadata.Notes = C_AddOns.GetAddOnMetadata(addonName, "notes")
 Metadata.IconTexture = C_AddOns.GetAddOnMetadata(addonName, "icontexture")
 Metadata.Author = C_AddOns.GetAddOnMetadata(addonName, "author")
 Metadata.DBName = addonName:gsub("_", "") .. "DB"
-Metadata.Initials = Metadata.Title:gsub("([^%s])[^%s]*", "%1"):gsub("%s+", "")
+Metadata.Initials = Metadata.Title:gsub("(%l)(%u)", "%1 %2"):gsub("(%u)%l*", "%1"):gsub("%s+", "")
