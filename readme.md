@@ -2,11 +2,16 @@
 
 A clean starting point for your next WoW addon.
 
+## Installation
+
+1. Rename the `AddonBase.toc` file to match your addon's folder name
+1. Replace all `AddonBase` and `Addon Base` references within `.toc`
+
 ## Features
 
-- Modular code structure
-- [Utility functions](/Utils.lua)
-- **No external library dependencies**, uses only the WoW API
+- 🧩 Modular code structure
+- 🛠️ [Utility functions](/Utils.lua)
+- 🧼 No external libraries, uses only the WoW API
 
 ## Recommended Dev Addons
 
