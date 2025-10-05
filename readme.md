@@ -6,6 +6,7 @@ A clean starting point for your next WoW addon.
 
 1. Rename the `AddonBase.toc` file to match your addon's folder name
 1. Replace all `AddonBase` and `Addon Base` references within `.toc`
+1. Update `readme.md` to reflect your addon
 
 ## Features
 
