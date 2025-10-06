@@ -11,8 +11,9 @@ A clean starting point for your next WoW addon.
 ## Features
 
 - 🧩 Modular code structure
-- 🛠️ [Utility functions](/Utils.lua)
 - 🧼 No external libraries, uses only the WoW API
+- 🛠️ [Utility functions](/Utils.lua)
+- 💬 Basic dialog and slash command handling
 
 ## Recommended Dev Addons
 
