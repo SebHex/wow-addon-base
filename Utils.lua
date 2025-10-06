@@ -34,7 +34,7 @@ end
 --[[
   Log data to DevTool addon. Recommended for debugging and addon development.
 
-  See https://www.curseforge.com/wow/addons/devtool
+  See https://curseforge.com/wow/addons/devtool
 ]]
 function Utils:Log(data, name)
   if (not Utils:LoadAddon("DevTool")) then
@@ -53,7 +53,7 @@ end
 --[[
   Toggle DevTool dialog to see logs.
 
-  See https://www.curseforge.com/wow/addons/devtool
+  See https://curseforge.com/wow/addons/devtool
 ]]
 function Utils:ToggleLogs()
   if (Utils:LoadAddon("DevTool")) then
