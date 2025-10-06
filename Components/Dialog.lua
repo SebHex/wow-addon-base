@@ -73,4 +73,14 @@ function dialog:Init()
   })
 end
 
+function dialog:Toggle()
+  local isShown = self:IsShown()
+
+  if (isShown) then
+    UIFrameFlash(self, 0.2, 0.2, 0.2, true, 0, 0)
+  else
+    ShowUIPanel(self)
+  end
+end
+
 addonTable.Dialog = dialog

@@ -1,5 +1,4 @@
-local addonName, addonTable = ...
-local Metadata = addonTable.Metadata
+local _, addonTable = ...
 
 local Utils = {}
 addonTable.Utils = Utils
@@ -60,44 +59,4 @@ function Utils:ToggleLogs()
   if (Utils:LoadAddon("DevTool")) then
     DevTool:ToggleUI()
   end
-end
-
---[[
-  Toggle the options dialog.
-]]
-function Utils:ToggleDialog()
-  local dialog = addonTable.Dialog
-  local isShown = dialog:IsShown()
-
-  if (isShown) then
-    UIFrameFlash(dialog, 0.2, 0.2, 0.2, true, 0, 0)
-  else
-    ShowUIPanel(dialog)
-  end
-end
-
---[[
-  Initialize the addon compartment function.
-]]
-function Utils:InitAddonCompartmentFunc()
-  local addonCompartmentFuncName = addonName .. "_AddonCompartmentFunc"
-  _G[addonCompartmentFuncName] = Utils.ToggleDialog
-end
-
---[[
-  Initialize the slash commands.
-]]
-function Utils:InitSlashCommands()
-  local addonNameUpperCase = addonName:upper()
-  local commands = {
-    addonName,
-    Metadata.Initials
-  }
-
-  for index, command in ipairs(commands) do
-    local name = "SLASH_" .. addonNameUpperCase .. "_TOGGLE_DIALOG" .. index
-    _G[name] = "/" .. command
-  end
-
-  SlashCmdList[addonNameUpperCase .. "_TOGGLE_DIALOG"] = Utils.ToggleDialog
 end
