@@ -8,6 +8,6 @@
 ## AddonCompartmentFunc: AddonBase_AddonCompartmentFunc
 
 Metadata.lua
-Dialog.lua
+Components/Dialog.lua
 Utils.lua
 Init.lua

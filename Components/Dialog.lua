@@ -73,6 +73,4 @@ function dialog:Init()
   })
 end
 
-dialog:Init()
 addonTable.Dialog = dialog
-
