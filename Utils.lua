@@ -3,13 +3,29 @@ local _, addonTable = ...
 local Utils = {}
 addonTable.Utils = Utils
 
+local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
+local errorIcon = CreateAtlasMarkup("Ping_Wheel_Icon_Warning_Small", 22, 22)
+
 --[[
   Print a warning message to chat frame.
 ]]
 function Utils:PrintWarning(...)
-  local warningIcon = CreateAtlasMarkup("services-icon-warning", 16, 16)
   local message = table.concat({...}, " ")
   print(warningIcon, "|cfff8e928" .. message .. "|r")
+end
+
+--[[
+  Add a warning message to UI Errors Frame.
+]]
+function Utils:AddWarningMessage(message)
+  UIErrorsFrame:AddExternalWarningMessage(warningIcon .. " " .. message)
+end
+
+--[[
+  Add an error message to UI Errors Frame.
+]]
+function Utils:AddErrorMessage(message)
+  UIErrorsFrame:AddExternalErrorMessage(errorIcon .. " " .. message)
 end
 
 --[[

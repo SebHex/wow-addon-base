@@ -11,7 +11,8 @@
     "FrameUtil",
     "SOUNDKIT",
     "SlashCmdList",
-    "UIFrameFlash"
+    "UIFrameFlash",
+    "UIErrorsFrame"
   ],
   "Lua.runtime.version": "Lua 5.1",
   "Lua.runtime.builtin": {
